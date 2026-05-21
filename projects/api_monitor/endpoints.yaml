@@ -1,0 +1,28 @@
+# API Monitor Configuration
+# User Story: As a DevOps engineer, I want to define monitored endpoints
+# in a config file so that I can add/remove endpoints without code changes.
+
+endpoints:
+  - name: GitHub API
+    url: https://api.github.com
+    method: GET
+    expected_status: 200
+    timeout: 5
+    interval: 60
+    alert_on_slow_ms: 1500
+
+  - name: JSONPlaceholder
+    url: https://jsonplaceholder.typicode.com/posts/1
+    method: GET
+    expected_status: 200
+    timeout: 5
+    interval: 30
+    alert_on_slow_ms: 1000
+
+  - name: HTTPBin Health
+    url: https://httpbin.org/status/200
+    method: GET
+    expected_status: 200
+    timeout: 8
+    interval: 120
+    alert_on_slow_ms: 3000
